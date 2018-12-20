@@ -29,8 +29,8 @@ X = tf.placeholder("float")
 Y = tf.placeholder("float")
 
 # Set model weights
-W = tf.Variable(rng.randn(), name="weight")
-b = tf.Variable(rng.randn(), name="bias")
+W = tf.get_variable(initializer=rng.randn(), name="weight")
+b = tf.Variable(initializer=rng.randn(), name="bias")
 
 # Construct a linear model
 pred = tf.add(tf.multiply(X, W), b)
